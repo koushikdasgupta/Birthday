@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dumbo's Birthday</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .content h2 {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 0.95rem;
+            }
+
+            input {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hiiiiiiiiiiiiiiiiiiiiii</h1>
+        <h1>Dumboooooo</h1>
+        <p>Apna naam batao 🤭:</p>
+        <input type="text" id="username" placeholder="Enter your name" />
+        <button onclick="checkName()">Click kro</button>
+        <br />
+        <small>(Hint: Jo name sirf tumhe aur mujhe pta hai🤫)</small>
+        <div class="error" id="error-message"></div>
+        <div class="content" id="content">
+            <h2>Yes you are DUMBO😌</h2>
+            <p>Aur aaj kya hai wo dekhne ke liye</p>
+            <button onclick="redirectTo()">Click kriye</button>
+        </div>
+    </div>
+
+    <script>
+        const allowedName = "Dumbo";
+
+        function checkName() {
+            const username = document.getElementById('username').value.trim();
+            const errorMessage = document.getElementById('error-message');
+            const content = document.getElementById('content');
+
+            errorMessage.textContent = '';
+
+            if (username === allowedName) {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+                errorMessage.textContent = 'Sahi sahi name type kro, kya kar rahi ho Ullu🥹';
+            }
+        }
+
+        function redirectTo() {
+            window.location.href = "main.html";
+        }
+    </script>
+</body>
+
+</html>
